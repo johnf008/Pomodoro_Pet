@@ -8,7 +8,7 @@ const levelEl = document.getElementById("level");
 const pomodorosEl = document.getElementById("pomodoros");
 
 let interval;
-let remainingTime = 5;
+let remainingTime = 1500;
 let intervalCheck = false;
 
 let pomodoros;
