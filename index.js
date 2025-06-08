@@ -93,7 +93,7 @@ function updateLevel(){
 }
 function startTimer(){
     if(intervalCheck) return;
-
+    document.getElementById("cat_image").src = "images/studious_cat.png";
     intervalCheck = true;
     startEl.disabled = true; 
     interval = setInterval(()=>{
@@ -109,6 +109,7 @@ function startTimer(){
             intervalCheck = false;
             startEl.disabled = false;
             updateLevel();
+            document.getElementById("cat_image").src = "images/rest_cat.jpg";
             }, 0);
         }
     }, 1000)
