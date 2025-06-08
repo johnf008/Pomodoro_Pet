@@ -1,3 +1,4 @@
+//Hi :3
 const startEl = document.getElementById("start");
 const stopEl = document.getElementById("stop");
 const resetEl = document.getElementById("reset");
