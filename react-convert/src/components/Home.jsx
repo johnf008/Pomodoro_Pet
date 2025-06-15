@@ -2,14 +2,6 @@
 function Home() {
     return (
     <>
-    <div className="bg-red-700 flex flex-col items-center min-h-screen">
-    <div className="h-[50px] flex items-center text-white w-[80%] border-[2px] px-10">
-        <img className="min-h-[50px] text-2xl font-bold" src="images/logo.png"/>
-        <div className="grow flex justify-end">
-            <a href="https://github.com/johnf008/Pomodoro_Pet.git">Github</a>
-        </div>
-    </div>
-    
     <div className="flex-1 flex items-center justify-center mt-6">
 
     <div className=" text-red-950 font-bold text-center">
@@ -35,8 +27,6 @@ function Home() {
         <div className="min-h-[50px] text-2xl" id="pomodoros">0/1</div>
     </div>
     </div>
-    </div>
-    
     </>
     )
 }
