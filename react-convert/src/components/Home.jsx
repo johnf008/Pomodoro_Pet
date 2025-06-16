@@ -1,24 +1,55 @@
-import React, {useState, useEffect} from "react";
+import React, {useRef, useState, useEffect} from "react";
 
 function Home() {
 
     const initialTime = 1500;
-    const [timeLeft, updateTime] = useState(initialTime);
+    const [isRunning, setIsRunning] = useState(false);
+    const [remainingTime, updateTime] = useState(initialTime);
+    const intervalIdRef = useRef(null);
+
+    useEffect(() => {
+
+        if(isRunning){
+            intervalIdRef.current = setInterval(() => {
+                updateTime(remainingTime => remainingTime - 1);
+
+            },1000);
+                }
+        
+        return () => {
+            clearInterval(intervalIdRef.current);
+        }
+
+    }, [isRunning]);
     
     function start() {
-
+        setIsRunning(true);
     }
 
     function stop() {
-
+        setIsRunning(false);
     }
 
     function reset() {
-
+        updateTime(1500);
+        setIsRunning(false);
     }
 
     function formatTime(){
-        return '25:00';
+        let mins = Math.floor(remainingTime / 60);
+        let secs = remainingTime % 60; 
+
+        mins = mins.toString();
+        secs = secs.toString();
+
+        if (mins.length < 2){
+            mins = "0" + mins;
+        }
+
+        if (secs.length < 2){
+            secs = "0" + secs;
+        }
+        return `${mins}:${secs}`;
     }
 
 
