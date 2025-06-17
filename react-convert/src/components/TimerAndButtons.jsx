@@ -11,17 +11,9 @@ function TimerAndButtons({onTimerFinish}) {
         if(isRunning && intervalIdRef.current === null){
             intervalIdRef.current = setInterval(() => {
                 updateTime(prevTime => {
-                if(prevTime == 0) {
+                if(prevTime < 0) {
                     console.log("ur true!");
-                    alert("Time's up! Take a break!");
-                    setIsRunning(false);
-
-                    if (onTimerFinish){
-                        onTimerFinish();
-                    }
-
                     return 1500;
-
                 } else {
                     console.log("else");
                     return (prevTime - 1);
@@ -37,6 +29,20 @@ function TimerAndButtons({onTimerFinish}) {
         }
 
     }, [isRunning]);
+
+    useEffect(() => {
+        if (remainingTime === 0 && isRunning){
+            setIsRunning(false);
+            alert("Take a break!!");
+
+            if (onTimerFinish){
+                onTimerFinish();
+            }
+            updateTime(1500);
+
+
+        }
+    }, [remainingTime, isRunning, onTimerFinish]);
     
     function start() {
         setIsRunning(true);

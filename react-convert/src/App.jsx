@@ -7,10 +7,7 @@ import Header from './components/Header'
 import Leveling from './components/Leveling'
 
 function App() {
-  let leftSide = "";
-  let rightSide = "";
-  let char;
-  let rightSideCheck = false;
+  
 
   const [levels, setLevels] = useState(1);
   const [pomodoros, setPomodoros] = useState("0/1");
@@ -23,12 +20,15 @@ function App() {
       setPomodoros("0/" + levels.toString());
     }
     else {
-      numerator += 1; 
-      setPomodoros(numerator.toString() + denominator.toString());
+      setPomodoros(`${numerator + 1}/${denominator}`);
     }
   }
 
   function decodePomodoro(pomodoros){
+    let leftSide = "";
+    let rightSide = "";
+    let char;
+    let rightSideCheck = false;
     for (let i = 0; i < pomodoros.length; i++){
         char = pomodoros.charAt(i);
         console.log("Char: " + char);
