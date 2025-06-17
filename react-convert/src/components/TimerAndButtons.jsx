@@ -1,11 +1,10 @@
 import React, {useRef, useState, useEffect} from "react";
 
-function Home() {
+function TimerAndButtons({onTimerFinish}) {
 
-    const initialTime = 1500;
+    const initialTime = 10;
     const [isRunning, setIsRunning] = useState(false);
     const [remainingTime, updateTime] = useState(initialTime);
-    const [level, updateLevel] = useState(1)
     const intervalIdRef = useRef(null);
 
     useEffect(() => {
@@ -16,6 +15,11 @@ function Home() {
                     console.log("ur true!");
                     alert("Time's up! Take a break!");
                     setIsRunning(false);
+
+                    if (onTimerFinish){
+                        onTimerFinish();
+                    }
+
                     return 1500;
 
                 } else {
@@ -87,4 +91,4 @@ function Home() {
     )
 }
 
-export default Home; 
+export default TimerAndButtons; 
