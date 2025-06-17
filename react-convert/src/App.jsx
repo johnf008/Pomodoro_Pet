@@ -15,12 +15,21 @@ function App() {
   function handleLevelUp(pomodoros) {
     let [numerator, denominator] = decodePomodoro(pomodoros);
 
+    numerator = parseInt(numerator);
+    denominator = parseInt(denominator);
+
+    console.log(typeof numerator);
+    console.log(typeof denominator);
+    console.log(numerator / denominator);
+
+    numerator += 1;
     if (numerator / denominator === 1){
       setLevels(prev => prev + 1);
-      setPomodoros("0/" + levels.toString());
+      console.log("Levels: " + levels);
+      setPomodoros("0/" + (levels + 1).toString());
     }
     else {
-      setPomodoros(`${numerator + 1}/${denominator}`);
+      setPomodoros(`${numerator}/${denominator}`);
     }
   }
 

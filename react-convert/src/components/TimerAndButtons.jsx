@@ -2,7 +2,7 @@ import React, {useRef, useState, useEffect} from "react";
 
 function TimerAndButtons({onTimerFinish}) {
 
-    const initialTime = 10;
+    const initialTime = 1500;
     const [isRunning, setIsRunning] = useState(false);
     const [remainingTime, updateTime] = useState(initialTime);
     const intervalIdRef = useRef(null);
@@ -11,14 +11,10 @@ function TimerAndButtons({onTimerFinish}) {
         if(isRunning && intervalIdRef.current === null){
             intervalIdRef.current = setInterval(() => {
                 updateTime(prevTime => {
-                if(prevTime < 0) {
-                    console.log("ur true!");
-                    return 1500;
-                } else {
+                if(prevTime > 0) {
                     console.log("else");
                     return (prevTime - 1);
                 }
-                
                 });
             },1000);
         }
