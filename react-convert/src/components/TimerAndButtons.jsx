@@ -2,7 +2,7 @@ import React, {useRef, useState, useEffect} from "react";
 
 function TimerAndButtons({onTimerFinish}) {
 
-    const initialTime = 1500;
+    const initialTime = 5;
     const [isRunning, setIsRunning] = useState(false);
     const [remainingTime, updateTime] = useState(initialTime);
     const intervalIdRef = useRef(null);

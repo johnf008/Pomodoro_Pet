@@ -11,6 +11,7 @@ function App() {
 
   const [levels, setLevels] = useState(1);
   const [pomodoros, setPomodoros] = useState("0/1");
+  const [imgSrc, updateImage] = useState("images/studious_cat.png");
 
   function handleLevelUp(pomodoros) {
     let [numerator, denominator] = decodePomodoro(pomodoros);
@@ -31,6 +32,8 @@ function App() {
     else {
       setPomodoros(`${numerator}/${denominator}`);
     }
+
+    updateImage("images/rest_cat.jpg");
   }
 
   function decodePomodoro(pomodoros){
@@ -69,7 +72,7 @@ function App() {
         <Header/>
         <div className="flex flex-row">
           <TimerAndButtons onTimerFinish={() => handleLevelUp(pomodoros)}/>
-          <Leveling level={levels} pomodoros={pomodoros}/>
+          <Leveling level={levels} pomodoros={pomodoros} image={imgSrc}/>
         </div>
     </div>
     </>
