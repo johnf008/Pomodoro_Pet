@@ -19,14 +19,14 @@ function App() {
     numerator = parseInt(numerator);
     denominator = parseInt(denominator);
 
-    console.log(typeof numerator);
-    console.log(typeof denominator);
-    console.log(numerator / denominator);
+    //console.log(typeof numerator);
+    //console.log(typeof denominator);
+    //console.log(numerator / denominator);
 
     numerator += 1;
     if (numerator / denominator === 1){
       setLevels(prev => prev + 1);
-      console.log("Levels: " + levels);
+      //console.log("Levels: " + levels);
       setPomodoros("0/" + (levels + 1).toString());
     }
     else {
@@ -43,7 +43,7 @@ function App() {
     let rightSideCheck = false;
     for (let i = 0; i < pomodoros.length; i++){
         char = pomodoros.charAt(i);
-        console.log("Char: " + char);
+        //console.log("Char: " + char);
 
         if(char === "/" || rightSideCheck){
             if(rightSideCheck){
@@ -56,8 +56,8 @@ function App() {
         else{
             leftSide += char.toString();
         }
-        console.log("Left: "+ leftSide);
-        console.log("Right: " + rightSide);
+        //console.log("Left: "+ leftSide);
+        //console.log("Right: " + rightSide);
     }
 
         leftSide = parseInt(leftSide);
