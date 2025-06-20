@@ -2,7 +2,7 @@ import React, {useRef, useState, useEffect} from "react";
 
 function TimerAndButtons({onTimerFinish, changeImage}) {
 
-    const initialTime = 5;
+    const initialTime = 1500;
     const [sbCount, updateSBCount] = useState(1);
 
     const [isRunning, setIsRunning] = useState(false);
@@ -67,17 +67,17 @@ function TimerAndButtons({onTimerFinish, changeImage}) {
             updateStage(nextStage);
             
             if (stageState == "short"){
-                updateTime(3);
+                updateTime(300);
                 updateReset(false);
                 console.log("Small Break Time")
             } 
             else if (stageState == "long") {
-                updateTime(9);
+                updateTime(900);
                 updateReset(false);
                 console.log("Long Break Time");
             } 
             else if (stageState == "lockin") {
-                updateTime(5);
+                updateTime(1500);
                 updateReset(true);
                 nextSBCount += 1; 
                 console.log("Lock in time");
