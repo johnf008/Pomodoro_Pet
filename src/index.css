@@ -1,1 +1,10 @@
+@font-face {
+    font-family: Yuruka;
+    src: url("../src/assets/fonts/fot-yuruka-std.ttf");
+}
+
 @import "tailwindcss";
+
+@theme{
+    --font-Yuruka: Yuruka, "sans-serif";
+}

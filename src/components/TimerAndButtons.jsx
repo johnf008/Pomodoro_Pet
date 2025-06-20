@@ -14,6 +14,8 @@ function TimerAndButtons({onTimerFinish, changeImage}) {
 
     const intervalIdRef = useRef(null);
 
+    let meowSound = new Audio("sounds/meow.mp3");
+
     useEffect(() => {
         if(isRunning && intervalIdRef.current === null){
             intervalIdRef.current = setInterval(() => {
@@ -35,8 +37,8 @@ function TimerAndButtons({onTimerFinish, changeImage}) {
 
     useEffect(() => {
         if (remainingTime === 0 && isRunning){
+            meowSound.play();
             setIsRunning(false);
-            alert("Take a break!!");
 
             let nextStage = stageState; 
             let nextSBCount = sbCount; 
@@ -83,7 +85,6 @@ function TimerAndButtons({onTimerFinish, changeImage}) {
             }
             
 
-            setIsRunning(true);
             console.log(sbCount);
 
         }
