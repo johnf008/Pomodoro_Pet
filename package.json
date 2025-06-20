@@ -1,7 +1,7 @@
 {
   "name": "new-vite-react",
   "homepage": "https://johnf008.github.io/Pomodoro_Pet",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
