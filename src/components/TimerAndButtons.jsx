@@ -2,7 +2,7 @@ import React, {useRef, useState, useEffect} from "react";
 
 function TimerAndButtons({onTimerFinish, changeImage}) {
 
-    const initialTime = 1500;
+    const initialTime = 5;
     const [sbCount, updateSBCount] = useState(1);
 
     const [isRunning, setIsRunning] = useState(false);
