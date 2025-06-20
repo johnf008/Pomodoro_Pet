@@ -70,10 +70,10 @@ function App() {
 
     console.log("Img src b4 the function " + imgSrc);
 
-    if(imgSrc == "images/studious_cat.png"){
+    if(imgSrc == "/Pomodoro_Pet/images/studious_cat.png"){
       updateImage("/Pomodoro_Pet/images/rest_cat.jpg");
     }
-    else if (imgSrc == "images/rest_cat.jpg") {
+    else if (imgSrc == "/Pomodoro_Pet/images/rest_cat.jpg") {
       updateImage("/Pomodoro_Pet/images/studious_cat.png");
     } 
     else {
