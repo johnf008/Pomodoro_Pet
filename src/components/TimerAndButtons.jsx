@@ -3,7 +3,7 @@ import React, {useRef, useState, useEffect} from "react";
 function TimerAndButtons({onTimerFinish}) {
 
     const initialTime = 5;
-    const [sbCount, updateSBCount] = useState(0);
+    const [sbCount, updateSBCount] = useState(1);
 
     const [isRunning, setIsRunning] = useState(false);
     const [remainingTime, updateTime] = useState(initialTime);
@@ -42,34 +42,40 @@ function TimerAndButtons({onTimerFinish}) {
                 onTimerFinish();
             }
 
-            if (sbCount > 4){
-                updateStage("long");
+            let nextStage = stageState; 
+            let nextSBCount = sbCount; 
+
+            if (sbCount >= 4 && stageState == "lockin"){
+                console.log("The sbCount should be 4, but its " + sbCount);
+                nextStage = "long";
+                nextSBCount = 0;
             }
             else if (stageState == "lockin") {
-                updateStage("short");
+                nextStage = "short";
             }
             else if (stageState == "short" || stageState == "long"){
-                updateStage("lockin");
+                nextStage = "lockin";
             }
+
+            updateSBCount(nextSBCount);
+            updateStage(nextStage);
             
             if (stageState == "short"){
-                updateSBCount(prev => prev + 1); 
-
                 updateTime(3);
-
                 updateReset(false);
                 console.log("Small Break Time")
             } 
             else if (stageState == "long") {
                 updateTime(9);
-                updateSBCount(0);
                 updateReset(false);
                 console.log("Long Break Time");
             } 
             else if (stageState == "lockin") {
                 updateTime(5);
                 updateReset(true);
+                nextSBCount += 1; 
                 console.log("Lock in time");
+                updateSBCount(nextSBCount); 
             }
             
 
