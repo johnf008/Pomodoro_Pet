@@ -1,6 +1,6 @@
 import React, {useRef, useState, useEffect} from "react";
 
-function TimerAndButtons({onTimerFinish}) {
+function TimerAndButtons({onTimerFinish, changeImage}) {
 
     const initialTime = 5;
     const [sbCount, updateSBCount] = useState(1);
@@ -57,6 +57,10 @@ function TimerAndButtons({onTimerFinish}) {
                 onTimerFinish();
             }
 
+            if(changeImage){
+                changeImage();
+            }
+
             updateSBCount(nextSBCount);
             updateStage(nextStage);
             
@@ -83,7 +87,7 @@ function TimerAndButtons({onTimerFinish}) {
             console.log(sbCount);
 
         }
-    }, [remainingTime, isRunning, onTimerFinish]);
+    }, [remainingTime, isRunning, onTimerFinish, changeImage]);
     
     function start() {
         setIsRunning(true);

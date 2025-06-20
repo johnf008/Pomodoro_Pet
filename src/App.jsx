@@ -12,7 +12,6 @@ function App() {
   const [levels, setLevels] = useState(1);
   const [pomodoros, setPomodoros] = useState("0/1");
   const [imgSrc, updateImage] = useState("images/studious_cat.png");
-  const [timerState, updateTimer] = useState("lockin");
 
   function handleLevelUp(pomodoros) {
     let [numerator, denominator] = decodePomodoro(pomodoros);
@@ -34,15 +33,6 @@ function App() {
       setPomodoros(`${numerator}/${denominator}`);
     }
 
-    /*
-    if (timerState == "lockin"){
-      updateImage("images/rest_cat.jpg");
-    }
-    else if (timerState == "break"){
-      updateImage("images/studious_cat.png");
-      updateTimer("lockin");
-    }
-      */
   }
 
   function decodePomodoro(pomodoros){
@@ -75,12 +65,31 @@ function App() {
 
   }
 
+  function changeDaImage() {
+    console.log("chat, is this function even running??");
+
+    console.log("Img src b4 the function " + imgSrc);
+
+    if(imgSrc == "images/studious_cat.png"){
+      updateImage("images/rest_cat.jpg");
+    }
+    else if (imgSrc == "images/rest_cat.jpg") {
+      updateImage("images/studious_cat.png");
+    } 
+    else {
+       updateImage("images/studious_cat.png");
+    }
+
+    console.log("Img src after the function " + imgSrc);
+  }
+  
+
   return (
     <>
     <div className="bg-red-700 flex flex-col items-center justfy min-h-screen ">
         <Header/>
         <div className="flex flex-row">
-          <TimerAndButtons onTimerFinish={() => handleLevelUp(pomodoros)}/>
+          <TimerAndButtons onTimerFinish={() => handleLevelUp(pomodoros)} changeImage={changeDaImage}/>
           <Leveling level={levels} pomodoros={pomodoros} image={imgSrc}/>
         </div>
     </div>
