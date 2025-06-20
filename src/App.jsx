@@ -11,7 +11,7 @@ function App() {
 
   const [levels, setLevels] = useState(1);
   const [pomodoros, setPomodoros] = useState("0/1");
-  const [imgSrc, updateImage] = useState("images/studious_cat.png");
+  const [imgSrc, updateImage] = useState("/Pomodoro_Pet/images/studious_cat.png");
 
   function handleLevelUp(pomodoros) {
     let [numerator, denominator] = decodePomodoro(pomodoros);
@@ -71,13 +71,13 @@ function App() {
     console.log("Img src b4 the function " + imgSrc);
 
     if(imgSrc == "images/studious_cat.png"){
-      updateImage("images/rest_cat.jpg");
+      updateImage("/Pomodoro_Pet/images/rest_cat.jpg");
     }
     else if (imgSrc == "images/rest_cat.jpg") {
-      updateImage("images/studious_cat.png");
+      updateImage("/Pomodoro_Pet/images/studious_cat.png");
     } 
     else {
-       updateImage("images/studious_cat.png");
+       updateImage("/Pomodoro_Pet/images/studious_cat.png");
     }
 
     console.log("Img src after the function " + imgSrc);

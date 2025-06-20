@@ -127,7 +127,7 @@ function TimerAndButtons({onTimerFinish, changeImage}) {
     <div className="flex-1 flex items-center justify-center mt-6">
 
     <div className=" text-red-950 font-bold text-center">
-        <img className="w-96" src="images/title_image.png"/>
+        <img className="w-96" src="/Pomodoro_Pet/images/title_image.png"/>
         <div className="min-h-[100px] text-9xl" id="timer">{formatTime()}</div>
 
         <div className="mt-3">
