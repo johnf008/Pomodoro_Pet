@@ -12,6 +12,7 @@ function App() {
   const [levels, setLevels] = useState(1);
   const [pomodoros, setPomodoros] = useState("0/1");
   const [imgSrc, updateImage] = useState("images/studious_cat.png");
+  const [timerState, updateTimer] = useState("lockin");
 
   function handleLevelUp(pomodoros) {
     let [numerator, denominator] = decodePomodoro(pomodoros);
@@ -33,7 +34,15 @@ function App() {
       setPomodoros(`${numerator}/${denominator}`);
     }
 
-    updateImage("images/rest_cat.jpg");
+    /*
+    if (timerState == "lockin"){
+      updateImage("images/rest_cat.jpg");
+    }
+    else if (timerState == "break"){
+      updateImage("images/studious_cat.png");
+      updateTimer("lockin");
+    }
+      */
   }
 
   function decodePomodoro(pomodoros){

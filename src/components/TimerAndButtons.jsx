@@ -38,10 +38,6 @@ function TimerAndButtons({onTimerFinish}) {
             setIsRunning(false);
             alert("Take a break!!");
 
-            if (onTimerFinish){
-                onTimerFinish();
-            }
-
             let nextStage = stageState; 
             let nextSBCount = sbCount; 
 
@@ -55,6 +51,10 @@ function TimerAndButtons({onTimerFinish}) {
             }
             else if (stageState == "short" || stageState == "long"){
                 nextStage = "lockin";
+            }
+
+            if (onTimerFinish && nextStage == "lockin"){
+                onTimerFinish();
             }
 
             updateSBCount(nextSBCount);
