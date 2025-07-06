@@ -1,12 +1,32 @@
-# React + Vite
+## Pomodoro Pet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Studying is boring, so let's make it fun by adding a pet leveling system using Pomodoro!
 
-Currently, two official plugins are available:
+<p align="center">
+  <img width="460" src="https://github.com/user-attachments/assets/e781a877-f429-4a70-bf83-32b82e276461">
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+### Where to Use
+You can use this app by clicking <a href="https://johnf008.github.io/Pomodoro_Pet/" target="_blank">HERE</a>
+
+### How to Use
+You can begin the pomdoro timer by clicking the start button. When the time is up, a meow sound effect will play, which signals the start of a break. Press start on the timer, and come back when the meowing starts again. Thsi works like a regular Pomodoro timer, but each time you lock in, you level up!
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/johnf008/Pomodoro_Pet.git
+   ```
+2. Run this command in your terminal
+   ```sh
+   npm run dev
+   ```
+
+
+
+
