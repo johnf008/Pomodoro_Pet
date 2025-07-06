@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 function Header() {
     return( 
         <>
-        <div className="h-[50px] flex items-center text-white w-[80%] border-[2px] px-10">
+        <div className="h-[50px] flex items-center text-white w-[80%] border-[2px] px-10 rounded-xl">
             <img className="max-h-full" src="/Pomodoro_Pet/images/title_card.png"/>
 
             <div className="ml-auto h-13">
