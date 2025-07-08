@@ -86,7 +86,7 @@ function App() {
 
   return (
     <>
-    <div className="bg-red-700 flex flex-col items-center justfy min-h-screen font-Yuruka">
+    <div className="bg-radial from-red-700 from-40% to-red-400 flex flex-col items-center justfy min-h-screen font-Yuruka">
         <Header/>
         <div className="flex flex-row">
           <TimerAndButtons onTimerFinish={() => handleLevelUp(pomodoros)} changeImage={changeDaImage}/>
