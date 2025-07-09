@@ -92,7 +92,14 @@ function App() {
           <TimerAndButtons onTimerFinish={() => handleLevelUp(pomodoros)} changeImage={changeDaImage}/>
           <Leveling level={levels} pomodoros={pomodoros} image={imgSrc}/>
         </div>
+
+        <footer>
+          <p>Made by the goat John</p>
+          <img src="https://boba.hackclub.com/images/boba-parrot.gif"/>
+        </footer>
+        
     </div>
+    
     </>
   )
 }
