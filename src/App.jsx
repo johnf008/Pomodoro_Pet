@@ -93,9 +93,9 @@ function App() {
           <Leveling level={levels} pomodoros={pomodoros} image={imgSrc}/>
         </div>
 
-        <footer>
-          <p>Made by the goat John</p>
-          <img src="https://boba.hackclub.com/images/boba-parrot.gif"/>
+        <footer className='flex flex-col items-center justify-center mt-50'>
+          <p className=''>Made by the goat John</p>
+          <img src="https://boba.hackclub.com/images/boba-parrot.gif" className=''/>
         </footer>
         
     </div>
